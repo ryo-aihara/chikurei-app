@@ -4,8 +4,8 @@ document.getElementById("calcBtn").addEventListener("click", () => {
   const partialBoxes = +document.getElementById("partialBoxes").value || 0; // 端数ドーリー箱数
   const sheetsPerBox = +document.getElementById("sheetsPerBox").value || 2; // 1箱あたりの枚数
 
-  const BOXES_PER_DOLLY = 24;          // 1ドーリーに24箱
-  const SHEETS_PER_DOLLY = BOXES_PER_DOLLY * sheetsPerBox; // 48枚（2枚×24箱）
+  const BOXES_PER_DOLLY = 28;          // 1ドーリーに24箱
+  const SHEETS_PER_DOLLY = BOXES_PER_DOLLY * sheetsPerBox; // 56枚（2枚×28箱）
   const SHEETS_PER_CARRIER = 20;       // 1クールキャリア = 20枚
   const CARRIERS_PER_CART = 20;        // 1カゴ車 = 20クールキャリア
   const SHEETS_PER_CART = SHEETS_PER_CARRIER * CARRIERS_PER_CART; // 400枚
