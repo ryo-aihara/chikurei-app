@@ -1,0 +1,10 @@
+{
+  "name": "蓄冷材計算アプリ",
+  "short_name": "蓄冷材計算",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f6f8",
+  "theme_color": "#f4f6f8",
+  "description": "ドーリー台数と箱数から蓄冷材のカゴ車・クールキャリア・枚数を算出するPWA",
+  "icons": []
+}
