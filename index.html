@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <title>蓄冷材計算アプリ</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="蓄冷材計算" />
+  <meta name="theme-color" content="#f4f6f8" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>蓄冷材計算アプリ</h1>
+    <p class="sub">正ドーリー台数と端数ドーリー箱数から出庫数を算出</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>日次計算</h2>
+
+      <div class="grid">
+        <label>正ドーリー台数（24箱/台）
+          <input id="fullDollies" type="number" inputmode="numeric" placeholder="例: 18" />
+        </label>
+
+        <label>端数ドーリーの箱数（1〜23箱）
+          <input id="partialBoxes" type="number" inputmode="numeric" placeholder="例: 12" />
+        </label>
+
+        <label>1箱に使う枚数
+          <input id="sheetsPerBox" type="number" inputmode="numeric" value="2" min="1" />
+        </label>
+      </div>
+
+      <button id="calcBtn" style="margin-top:12px">＝ 計算する</button>
+
+      <div id="result" class="result" aria-live="polite"></div>
+
+      <details class="hint" style="margin-top:10px">
+        <summary>既定値の保存（任意）</summary>
+        <label>既定：1箱の枚数
+          <input id="prefSheets" type="number" inputmode="numeric" value="2" min="1" />
+        </label>
+        <button id="savePrefs">既定を保存</button>
+        <span id="saveMsg" class="save-msg"></span>
+      </details>
+    </section>
+
+    <section class="card">
+      <h2>メモ</h2>
+      <textarea id="notes" rows="4" placeholder="例）多摩センター 4Z固定、端数12箱など"></textarea>
+      <div class="row">
+        <button id="saveNotes">メモを保存</button>
+        <span id="notesMsg" class="save-msg"></span>
+      </div>
+    </section>
+
+    <section class="card tiny">
+      <p class="tiny">v1.0 / カゴ車＋クールキャリア＋枚数 出力対応 / オフラインOK</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./sw.js");
+    }
+  </script>
+</body>
+</html>
